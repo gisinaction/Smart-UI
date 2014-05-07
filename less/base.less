@@ -1,0 +1,157 @@
+//Name:                         base
+//Description:                  Defines styles for Variables
+
+// 重置box-sizing
+* {
+  .box-sizing(border-box);
+}
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+// Body 重置
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  font-family: @base-body-font-family;
+  font-size: @base-body-font-size;
+  line-height: @base-body-line-height;
+  color: @base-text-color;
+  background-color: @base-body-background;
+}
+
+// 重置为相关元素的字体
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// 链接
+
+a {
+  color: @base-link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @base-link-hover-color;
+    text-decoration: underline;
+  }
+
+}
+
+// Figures
+
+
+figure {
+  margin: 0;
+}
+// Images
+
+img {
+  vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+  .img-responsive();
+}
+
+// 圆角
+.img-rounded {
+  border-radius: @border-radius-large;
+}
+
+// 图片缩略图
+//
+// Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
+.img-thumbnail {
+  padding: @thumbnail-padding;
+  line-height: @base-body-line-height;
+  background-color: @thumbnail-bg;
+  border: 1px solid @thumbnail-border;
+  border-radius: @thumbnail-border-radius;
+  .transition(all .2s ease-in-out);
+
+  // 最大100%
+  .img-responsive(inline-block);
+}
+
+// 正圆
+.img-circle {
+  border-radius: 50%; 
+}
+
+
+// 水平线
+ 
+ hr {
+    display: block;
+    padding: 0;
+    border: 0;
+    border-top: @base-hr-border-width solid @base-hr-border;
+}
+
+em { color: @base-em-color; }
+
+/* 内嵌元素
+ ========================================================================== */
+
+
+ins {
+    background: @base-ins-background;
+    color: @base-ins-color;
+    text-decoration: none;
+}
+
+/*
+ * Mark
+ * 注意: 目前不支持 IE 8/9.
+ */
+
+mark {
+    background: @base-mark-background;
+    color: @base-mark-color;
+}
+
+/*
+ * 选择突出显示
+ */
+
+::-moz-selection {
+    background: @base-selection-background;
+    color: @base-selection-color;
+    text-shadow: none;
+}
+
+::selection {
+    background: @base-selection-background;
+    color: @base-selection-color;
+    text-shadow: none;
+}
+
+/*
+ * 缩写和定义
+ */
+
+abbr[title],
+dfn[title] { cursor: help; }
+
+dfn[title] {
+    border-bottom: 1px dotted;
+    font-style: normal;
+}
+
+
+
+
+
+

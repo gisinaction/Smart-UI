@@ -1,0 +1,143 @@
+// Variables   定义全局的变量
+// ========================================================================
+@gray-darker:            						lighten(#000, 13.5%); // #222
+@gray-dark:              						lighten(#000, 20%);   // #333
+@gray:                   						lighten(#000, 33.5%); // #555
+@gray-light:             						lighten(#000, 60%);   // #999
+@gray-lighter:           						lighten(#000, 93.5%); // #eee
+
+@brand-primary:         						#428bca;
+@brand-success:        							#5cb85c;
+@brand-info:            						#5bc0de;
+@brand-warning:         						#f0ad4e;
+@brand-danger:          						#d9534f;
+
+@base-body-background:                          #fff;
+@base-body-font-family:                         arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;
+@base-body-font-weight:                         normal;
+@base-body-font-size:                           14px;
+@base-body-font-size-large:         			ceil((@base-body-font-size * 1.25)); // ~18px
+@base-body-font-size-small:         			ceil((@base-body-font-size * 0.85)); // ~12px
+@base-body-line-height:                         1.428571429;
+@base-body-line-height-computed:    			floor((@base-body-font-size * @base-body-line-height)); // ~20px
+@base-text-color:                               #666;
+
+@base-link-color:                               #07D;
+@base-link-text-decoration:                     none;
+@base-link-hover-color:                         darken(@base-link-color, 15%);
+@base-link-hover-text-decoration:               underline;
+@base-em-color:                                 #D05;
+@base-ins-background:                           #ffa;
+@base-ins-color:                                #444;
+@base-mark-background:                          #ffa;
+@base-mark-color:                               #444;
+@base-selection-background:                     #39f;
+@base-selection-color:                          #fff;
+
+@base-margin-vertical:                          15px;
+@base-heading-margin-top:                       25px;
+@base-heading-font-family:                      inherit;
+@base-heading-font-weight:                      500;
+@base-heading-color:                            inherit;
+@base-heading-text-transform:                   none;
+@base-headings-line-height:                     1.1;
+
+@base-h1-font-size:                             floor((@base-body-font-size * 2.6));;
+@base-h2-font-size:                             floor((@base-body-font-size * 2.15)); ;
+@base-h3-font-size:                             ceil((@base-body-font-size * 1.7));;
+@base-h4-font-size:                             ceil((@base-body-font-size * 1.25));;
+@base-h5-font-size:                             @base-body-font-size;
+@base-h6-font-size:                             ceil((@base-body-font-size * 0.85));;
+
+@base-code-color:                               #D05;
+@base-code-font-size:                           12px;
+@base-code-font-family:                         Consolas, monospace, serif;
+@base-hr-border:                                #ddd;
+@base-hr-border-width:                          1px;
+
+
+@padding-base-vertical:    						6px;
+@padding-base-horizontal:   					12px;
+
+@padding-large-vertical:    					10px;
+@padding-large-horizontal:  					16px;
+
+@padding-small-vertical:    					5px;
+@padding-small-horizontal:  					10px;
+
+@padding-xs-vertical:       					1px;
+@padding-xs-horizontal:     					5px;
+
+@line-height-large:         					1.33;
+@line-height-small:         					1.5;
+
+@border-radius-base:        					4px;
+@border-radius-large:       					6px;
+@border-radius-small:       					3px;
+
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+@state-success-text:             				#3c763d;
+@state-success-bg:               				#dff0d8;
+@state-success-border:           				darken(spin(@state-success-bg, -10), 5%);
+
+@state-info-text:                				#31708f;
+@state-info-bg:                  				#d9edf7;
+@state-info-border:              				darken(spin(@state-info-bg, -10), 7%);
+
+@state-warning-text:             				#8a6d3b;
+@state-warning-bg:               				#fcf8e3;
+@state-warning-border:           				darken(spin(@state-warning-bg, -10), 5%);
+
+@state-danger-text:              				#a94442;
+@state-danger-bg:                				#f2dede;
+@state-danger-border:            				darken(spin(@state-danger-bg, -10), 5%);
+
+
+//== Tables
+
+@table-cell-padding:            				8px;
+//Padding for cells in `.table-condensed`.
+@table-condensed-cell-padding:  				5px;
+
+// Default background color used for all tables.
+@table-bg:                      				transparent;
+// Background color used for `.table-striped`.
+@table-bg-accent:               				#f9f9f9;
+// Background color used for `.table-hover`.
+@table-bg-hover:                				#f5f5f5;
+@table-bg-active:               				@table-bg-hover;
+
+// Border color for table and cell borders.
+@table-border-color:            				#ddd;
+
+
+//== Thumbnails
+
+// Padding around the thumbnail image
+@thumbnail-padding:           					4px;
+// Thumbnail background color
+@thumbnail-bg:                					@base-body-background;
+// Thumbnail border color
+@thumbnail-border:            					#ddd;
+// Thumbnail border radius
+@thumbnail-border-radius:     					@border-radius-base;
+
+// Custom text color for thumbnail captions
+@thumbnail-caption-color:     					@base-text-color;
+// Padding around the thumbnail caption
+@thumbnail-caption-padding:   					9px;
+
+
+
+//== Miscellaneous
+
+// 水平线颜色.
+@hr-border:                   @gray-lighter;
+
+// 水平偏移和列表形式.
+@component-offset-horizontal: 180px;

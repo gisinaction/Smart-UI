@@ -1,0 +1,468 @@
+//
+// Forms
+// --------------------------------------------------
+
+// `<input>` 背景颜色
+@input-bg:                       		#fff;
+// `<input disabled>` 背景颜色
+@input-bg-disabled:              		@gray-lighter;
+
+// `<input>` 字体颜色
+@input-color:                    		@gray;
+// `<input>` 边框颜色
+@input-border:                   		#ccc;
+// `<input>` 边框圆角
+@input-border-radius:            		0;//自定义input的圆角
+// 输入焦点边框颜色
+@input-border-focus:             		rgba(0, 0, 0, 0.2);
+
+// 占位符字体颜色
+@input-color-placeholder:        		@gray-light;
+
+// 默认 `.form-control` 高度
+@input-height-base:              		(@base-body-line-height-computed + (@padding-base-vertical * 2) + 2);
+// 大 `.form-control` 高度
+@input-height-large:             		(ceil(@base-body-font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
+// 小 `.form-control` 高度
+@input-height-small:             		(floor(@base-body-font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+@legend-color:                   		@gray-dark;
+@legend-border-color:            		#e5e5e5;
+
+// 文本输入背景颜色
+@input-group-addon-bg:           		@gray-lighter;
+// 文本输入边框颜色
+@input-group-addon-border-color: 		@input-border;
+
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: @base-body-line-height-computed;
+  font-size: (@base-body-font-size * 1.5);
+  line-height: inherit;
+  color: @legend-color;
+  border: 0;
+  border-bottom: 1px solid @legend-border-color;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%; 
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+// 规范表单控件
+
+input[type="search"] {
+  .box-sizing(border-box);
+}
+
+// 单选和复选框位置兼容
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9; // IE8-9
+  line-height: normal;
+}
+
+// 设置文件控制的高度匹配的文本输入
+input[type="file"] {
+  display: block;
+}
+
+// Make range inputs behave like textual form controls
+input[type="range"] {
+  display: block;
+  width: 100%;
+}
+
+// 使多个选择元素的高度自动
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+// 文件域、单选、复选焦点
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  .tab-focus();
+}
+
+// 调整输出元素
+output {
+  display: block;
+  padding-top: (@padding-base-vertical + 1);
+  font-size: @base-body-font-size;
+  line-height: @base-body-line-height;
+  color: @input-color;
+}
+
+
+// 常用的表单控件
+
+//
+// select
+// textarea
+// input[type="text"]
+// input[type="password"]
+// input[type="datetime"]
+// input[type="datetime-local"]
+// input[type="date"]
+// input[type="month"]
+// input[type="time"]
+// input[type="week"]
+// input[type="number"]
+// input[type="email"]
+// input[type="url"]
+// input[type="search"]
+// input[type="tel"]
+// input[type="color"]
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: @input-height-base; 
+  padding: @padding-base-vertical @padding-base-horizontal;
+  font-size: @base-body-font-size;
+  line-height: @base-body-line-height;
+  color: @input-color;
+  background-color: @input-bg;
+  background-image: none; 
+  border: 1px solid @input-border;
+  border-radius: @input-border-radius;
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
+
+  // Customize the `:focus` state to imitate native WebKit styles.
+  .form-control-focus();
+
+  // 占位符
+  .placeholder();
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: @input-bg-disabled;
+    opacity: 1;
+  }
+
+  // 重置textarea高度
+  textarea& {
+    height: auto;
+  }
+}
+
+
+// iOS上的搜索框
+//
+
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+
+//iOS日期输入的特殊风格
+
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  line-height: @input-height-base;
+  // IE8+ 不兼容日期输入框，所以重置
+  line-height: @base-body-line-height ~"\0";
+
+  &.input-sm {
+    line-height: @input-height-small;
+  }
+  &.input-lg {
+    line-height: @input-height-large;
+  }
+}
+
+
+// Form groups
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+
+// Checkboxes and radios
+//
+
+.radio,
+.checkbox {
+  display: block;
+  min-height: @base-body-line-height-computed; // clear the floating input if there is no label text
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  label {
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+  }
+}
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  float: left;
+  margin-left: -20px;
+}
+.radio + .radio,
+.checkbox + .checkbox {
+  margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
+}
+
+// Radios and checkboxes on same line
+.radio-inline,
+.checkbox-inline {
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px; // space out consecutive inline controls
+}
+
+// Apply same disabled cursor tweak as for inputs
+//
+// Note: Neither radios nor checkboxes can be readonly.
+input[type="radio"],
+input[type="checkbox"],
+.radio,
+.radio-inline,
+.checkbox,
+.checkbox-inline {
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}
+
+
+// Form control sizing
+
+
+.input-sm {
+  .input-size(@input-height-small; @padding-small-vertical; @padding-small-horizontal; @base-body-font-size-small; @line-height-small; @border-radius-small);
+}
+
+.input-lg {
+  .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @base-body-font-size-large; @line-height-large; @border-radius-large);
+}
+
+
+// Form control feedback states
+
+.has-feedback {
+  // Enable absolute positioning
+  position: relative;
+
+  // Ensure icons don't overlap text
+  .form-control {
+    padding-right: (@input-height-base * 1.25);
+  }
+}
+// Feedback icon (requires .glyphicon classes)
+.form-control-feedback {
+  position: absolute;
+  top: (@base-body-line-height-computed + 5); // Height of the `label` and its margin
+  right: 0;
+  z-index: 2; // Ensure icon is above input groups
+  display: block;
+  width: @input-height-base;
+  height: @input-height-base;
+  line-height: @input-height-base;
+  text-align: center;
+}
+.input-lg + .form-control-feedback {
+  width: @input-height-large;
+  height: @input-height-large;
+  line-height: @input-height-large;
+}
+.input-sm + .form-control-feedback {
+  width: @input-height-small;
+  height: @input-height-small;
+  line-height: @input-height-small;
+}
+
+// Feedback states
+.has-success {
+  .form-control-validation(@state-success-text; @state-success-text; @state-success-bg);
+}
+.has-warning {
+  .form-control-validation(@state-warning-text; @state-warning-text; @state-warning-bg);
+}
+.has-error {
+  .form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
+}
+
+
+// Static form control text
+//
+// Apply class to a `p` element to make any string of text align with labels in
+// a horizontal form layout.
+
+.form-control-static {
+  margin-bottom: 0; // Remove default margin from `p`
+}
+
+
+// Help text
+//
+// Apply to any element you wish to create light text for placement immediately
+// below a form control. Use for general help, formatting, or instructional text.
+
+.help-block {
+  display: block; // account for any element using help-block
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: lighten(@base-text-color, 25%); // lighten the text some for contrast
+}
+
+
+
+// Inline forms
+//
+// Make forms appear inline(-block) by adding the `.form-inline` class. Inline
+// forms begin stacked on extra small (mobile) devices and then go inline when
+// viewports reach <768px.
+//
+// Requires wrapping inputs and labels with `.form-group` for proper display of
+// default HTML form controls and our custom form controls (e.g., input groups).
+//
+// Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
+
+.form-inline {
+
+  // Kick in the inline
+  @media (min-width: @screen-sm-min) {
+    // Inline-block all the things for "inline"
+    .form-group {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+
+    // In navbar-form, allow folks to *not* use `.form-group`
+    .form-control {
+      display: inline-block;
+      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      vertical-align: middle;
+    }
+
+    .input-group {
+      display: inline-table;
+      vertical-align: middle;
+
+      .input-group-addon,
+      .input-group-btn,
+      .form-control {
+        width: auto;
+      }
+    }
+
+    // Input groups need that 100% width though
+    .input-group > .form-control {
+      width: 100%;
+    }
+
+    .control-label {
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+    .radio,
+    .checkbox {
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 0;
+      vertical-align: middle;
+    }
+    .radio input[type="radio"],
+    .checkbox input[type="checkbox"] {
+      float: none;
+      margin-left: 0;
+    }
+
+    // Validation states
+    .has-feedback .form-control-feedback {
+      top: 0;
+    }
+  }
+}
+
+
+// Horizontal forms
+
+.form-horizontal {
+
+  // Consistent vertical alignment of radios and checkboxes
+  //
+  // Labels also get some reset styles, but that is scoped to a media query below.
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: (@padding-base-vertical + 1); // Default padding plus a border
+  }
+  // Account for padding we're adding to ensure the alignment and of help text
+  // and other content below items
+  .radio,
+  .checkbox {
+    min-height: (@base-body-line-height-computed + (@padding-base-vertical + 1));
+  }
+
+  // Make form groups behave like rows
+  .form-group {
+    .make-row();
+  }
+
+  .form-control-static {
+    padding-top: (@padding-base-vertical + 1);
+    padding-bottom: (@padding-base-vertical + 1);
+  }
+
+  // Reset spacing and right align labels, but scope to media queries so that
+  // labels on narrow viewports stack the same as a default form example.
+  @media (min-width: @screen-sm-min) {
+    .control-label {
+      text-align: right;
+      margin-bottom: 0;
+      padding-top: (@padding-base-vertical + 1); // Default padding plus a border
+    }
+  }
+
+  // Validation states
+  //
+  // Reposition the icon because it's now within a grid column and columns have
+  // `position: relative;` on them. Also accounts for the grid gutter padding.
+  .has-feedback .form-control-feedback {
+    top: 0;
+    right: (@grid-gutter-width / 2);
+  }
+}
