@@ -1,13 +1,13 @@
-// Name:            Buttons
-// Description:     Defines styles for buttons
+/* =========================================
+* @name:        Buttons
+* @description: 按钮的基本样式
+* @author：		Vtoo Team
+* @Copy：		Vtoo design 2014
+* @git          https://github.com/VTOO/Smart-UI/
+*============================================*/
 
-
-// Variables
-// ========================================================================
-
-//== Buttons
-//
-//## For each of Bootstrap's buttons, define text, background and border color.
+// 变量
+//定义了文字、背景及边框.
 
 @btn-font-weight:                normal;
 
@@ -83,7 +83,7 @@
 }
 
 
-// Alternate buttons
+// 交替按钮
 // --------------------------------------------------
 
 .btn-default {
@@ -92,28 +92,28 @@
 .btn-primary {
   .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
 }
-// Success appears as green
+// 成功呈现绿色
 .btn-success {
   .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
 }
-// Info appears as blue-green
+//信息呈现蓝绿
 .btn-info {
   .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
 }
-// Warning appears as orange
+//警告呈现橙色
 .btn-warning {
   .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
 }
-// Danger and error appear as red
+// 危险及错误呈现红色
 .btn-danger {
   .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
 }
 
 
-// Link buttons
+// 链接按钮
 // -------------------------
 
-// Make a button look and behave like a link
+// 让一个按钮看起来像一个链接
 .btn-link {
   color: @base-link-color;
   font-weight: normal;
@@ -150,15 +150,15 @@
 }
 
 
-// Button Sizes
+// 按钮大小
 // --------------------------------------------------
 
 .btn-lg {
-  // line-height: ensure even-numbered height of button next to large input
+  // line-height: 确保按钮旁边的偶数高度大的输入
   .button-size(@padding-large-vertical; @padding-large-horizontal; @base-body-font-size-large; @line-height-large; @border-radius-large);
 }
 .btn-sm {
-  // line-height: ensure proper height of button next to small input
+  // line-height: 确保正确的按钮旁边的高度小的输入
   .button-size(@padding-small-vertical; @padding-small-horizontal; @base-body-font-size-small; @line-height-small; @border-radius-small);
 }
 .btn-xs {
@@ -166,7 +166,7 @@
 }
 
 
-// Block button
+// 块按钮
 // --------------------------------------------------
 
 .btn-block {
@@ -176,12 +176,12 @@
   padding-right: 0;
 }
 
-// Vertically space out multiple block buttons
+// 垂直空间多个块按钮
 .btn-block + .btn-block {
   margin-top: 5px;
 }
 
-// Specificity overrides
+//input 类型覆盖
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {

@@ -1,6 +1,10 @@
-//
-// Forms
-// --------------------------------------------------
+/* =========================================
+* @name:        Forms
+* @description: 全局表单样式
+* @author：		Vtoo Team
+* @Copy：		Vtoo design 2014
+* @git          https://github.com/VTOO/Smart-UI/
+*============================================*/
 
 // `<input>` 背景颜色
 @input-bg:                       		#fff;
@@ -194,14 +198,14 @@ input[type="month"] {
 }
 
 
-// Form groups
+// 表单组
 
 .form-group {
   margin-bottom: 15px;
 }
 
 
-// Checkboxes and radios
+// 复选框和单选框
 //
 
 .radio,
@@ -262,7 +266,7 @@ input[type="checkbox"],
 }
 
 
-// Form control sizing
+//表单控件大小
 
 
 .input-sm {
@@ -274,7 +278,7 @@ input[type="checkbox"],
 }
 
 
-// Form control feedback states
+// 表单控件的反馈状态
 
 .has-feedback {
   // Enable absolute positioning
@@ -308,7 +312,7 @@ input[type="checkbox"],
   line-height: @input-height-small;
 }
 
-// Feedback states
+// 反馈状态
 .has-success {
   .form-control-validation(@state-success-text; @state-success-text; @state-success-bg);
 }
@@ -344,17 +348,6 @@ input[type="checkbox"],
 
 
 
-// Inline forms
-//
-// Make forms appear inline(-block) by adding the `.form-inline` class. Inline
-// forms begin stacked on extra small (mobile) devices and then go inline when
-// viewports reach <768px.
-//
-// Requires wrapping inputs and labels with `.form-group` for proper display of
-// default HTML form controls and our custom form controls (e.g., input groups).
-//
-// Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
-
 .form-inline {
 
   // Kick in the inline
@@ -385,7 +378,7 @@ input[type="checkbox"],
     }
 
     // Input groups need that 100% width though
-    .input-group > .form-control {
+    .input-group  .form-control {
       width: 100%;
     }
 

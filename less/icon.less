@@ -1,14 +1,20 @@
-//Name:                         Icon
-//Description:                  Defines styles for icon
+/* =========================================
+* @name:        Icon
+* @description: 全局字体图标基本样式
+* @author：		Vtoo Team
+* @Copy：		Vtoo design 2014
+* @git          https://github.com/VTOO/Smart-UI/
+*============================================*/
 
 
-// Variables
+// 变量
 // ========================================================================
 
 @icon-font-path:				"fonts";
 @icon-font-name:				"smartui-fonts";
 @icon-font-svg-id:       		"smartui-fonts";
-
+//字体文件可以通过网上很多的方式获得，具体方式请百度
+//http://fontello.com 这个网站可以提供在线图标制作
 @icon-small-font-size:                          150%;
 @icon-medium-font-size:                         200%;
 @icon-large-font-size:                          250%;
@@ -43,6 +49,7 @@
   text-transform: none;
 }
 
+//此处定义字体图标的相应前缀
 i.st {
     font-family: "smartui-fonts";
 	font-style: normal;
@@ -56,7 +63,12 @@ i.st {
 	line-height: 1;
 }
 
-/* icon mapping
+/* 图标映射
+
+//如果你需要修改默认的字体文件，请从网上获取后也修改下面的相应内容
+//如果你修改了相应的前缀那么这里的前缀也需要作相应的修改
+//这里我们提供了450个常用的字体图标
+//默认字体图标不兼容IE7以下，需要作修改，请参看CSS/smartui-fonts-ie7.css
  ========================================================================== */
  
 i.st.spin1:before 									{ content: '\e001'; } 

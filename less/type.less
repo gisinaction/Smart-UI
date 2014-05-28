@@ -1,13 +1,14 @@
-//Name:                         type
-//Description:                  Defines styles for Typography
-// --------------------------------------------------
+/* =========================================
+* @name:        Type
+* @description: 基础排版
+* @author：		Vtoo Team
+* @Copy：		Vtoo design 2014
+* @git          https://github.com/VTOO/Smart-UI/
+*============================================*/
 
 // Headings
-// -------------------------
-//== Type
-//
-//##
 
+//== Type
 // Text muted color
 @text-muted:                  @gray-light;
 // Abbreviations and acronyms border color
@@ -82,7 +83,7 @@ h6, .h6 { font-size: @base-h6-font-size; }
 * + h6 { margin-top: @base-heading-margin-top; }
 
 
-// Body text
+// Body 文字
 // -------------------------
 
 p {
@@ -144,7 +145,7 @@ mark,
   padding: .2em;
 }
 
-// Alignment
+// 文字对齐
 .text-left           { text-align: left; }
 .text-right          { text-align: right; }
 .text-center         { text-align: center; }
@@ -195,7 +196,7 @@ mark,
   border-bottom: 1px solid @page-header-border-color;
 }
 
-// Lists
+// 列表
 // -------------------------
 
 // Unordered and Ordered lists
@@ -209,7 +210,7 @@ ol {
   }
 }
 
-// List options
+// 列表项
 
 .list-unstyled {
   padding-left: 0;
@@ -221,7 +222,7 @@ ol {
   .list-unstyled();
   margin-left: -5px;
 
-  > li {
+   li {
     display: inline-block;
     padding-left: 5px;
     padding-right: 5px;
@@ -282,7 +283,7 @@ abbr[data-original-title] {
   text-transform: uppercase;
 }
 
-// Blockquotes
+// 引用
 blockquote {
   padding: (@base-body-line-height-computed / 2) @base-body-line-height-computed;
   margin: 0 0 @base-body-line-height-computed;

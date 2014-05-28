@@ -1,10 +1,12 @@
-// Name:            Close
-// Description:     Defines styles for a close button
+/* =========================================
+* @name:        Close
+* @description: 关闭按钮
+* @author：		Vtoo Team
+* @Copy：		Vtoo design 2014
+* @git          https://github.com/VTOO/Smart-UI/
+*============================================*/
 
-
-// Variables
-// ========================================================================
-
+// 变量// ========================================================================
 @close-size:                                    20px;
 @close-alt-padding:                             2px;
 @close-alt-background:                          #eee;
@@ -16,6 +18,7 @@
     /* 2 */
     display: inline-block;
     width: @close-size;
+    height: @close-size;
     line-height: @close-size;
     text-align: center;
     color: inherit;
@@ -29,9 +32,9 @@
 }
 
 .close:after {
+    font-family: smartui-fonts;//定义字体为smartui-fonts
     display: block;
     content: "\e026";
-    font-family: smartui-fonts;
 }
 
 
@@ -62,6 +65,5 @@
 
 /* Icon */
 .close-alt:after { opacity: 0.5; }
-
 .close-alt:hover:after,
 .close-alt:focus:after { opacity: 0.8; }

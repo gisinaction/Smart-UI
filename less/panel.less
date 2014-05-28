@@ -130,18 +130,18 @@
 // watch it go full width.
 
 .panel {
-  > .table,
-  > .table-responsive > .table {
+   .table,
+   .table-responsive  .table {
     margin-bottom: 0;
   }
   // Add border top radius for first one
-  > .table:first-child,
-  > .table-responsive:first-child > .table:first-child {
+   .table:first-child,
+   .table-responsive:first-child > .table:first-child {
     .border-top-radius((@panel-border-radius - 1));
 
-    > thead:first-child,
-    > tbody:first-child {
-      > tr:first-child {
+     thead:first-child,
+     tbody:first-child {
+       tr:first-child {
         td:first-child,
         th:first-child {
           border-top-left-radius: (@panel-border-radius - 1);
@@ -154,13 +154,13 @@
     }
   }
   // Add border bottom radius for last one
-  > .table:last-child,
-  > .table-responsive:last-child > .table:last-child {
+   .table:last-child,
+   .table-responsive:last-child > .table:last-child {
     .border-bottom-radius((@panel-border-radius - 1));
 
-    > tbody:last-child,
-    > tfoot:last-child {
-      > tr:last-child {
+     tbody:last-child,
+     tfoot:last-child {
+       tr:last-child {
         td:first-child,
         th:first-child {
           border-bottom-left-radius: (@panel-border-radius - 1);
@@ -172,51 +172,51 @@
       }
     }
   }
-  > .panel-body + .table,
-  > .panel-body + .table-responsive {
+   .panel-body + .table,
+   .panel-body + .table-responsive {
     border-top: 1px solid @table-border-color;
   }
-  > .table > tbody:first-child > tr:first-child th,
-  > .table > tbody:first-child > tr:first-child td {
+   .table  tbody:first-child  tr:first-child th,
+   .table  tbody:first-child  tr:first-child td {
     border-top: 0;
   }
-  > .table-bordered,
-  > .table-responsive > .table-bordered {
+   .table-bordered,
+   .table-responsive > .table-bordered {
     border: 0;
-    > thead,
-    > tbody,
-    > tfoot {
-      > tr {
-        > th:first-child,
-        > td:first-child {
+     thead,
+     tbody,
+     tfoot {
+       tr {
+         th:first-child,
+         td:first-child {
           border-left: 0;
         }
-        > th:last-child,
-        > td:last-child {
+         th:last-child,
+         td:last-child {
           border-right: 0;
         }
       }
     }
-    > thead,
-    > tbody {
-      > tr:first-child {
-        > td,
-        > th {
+     thead,
+     tbody {
+       tr:first-child {
+         td,
+         th {
           border-bottom: 0;
         }
       }
     }
-    > tbody,
-    > tfoot {
-      > tr:last-child {
-        > td,
-        > th {
+     tbody,
+     tfoot {
+       tr:last-child {
+         td,
+         th {
           border-bottom: 0;
         }
       }
     }
   }
-  > .table-responsive {
+   .table-responsive {
     border: 0;
     margin-bottom: 0;
   }

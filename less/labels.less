@@ -1,26 +1,27 @@
-//
-// Labels
-// --------------------------------------------------
-//== Labels
-//
-//##
+/* =========================================
+* @name:        Labels
+* @description: Labels基本样式
+* @author：		Vtoo Team
+* @Copy：		Vtoo design 2014
+* @git          https://github.com/VTOO/Smart-UI/
+*============================================*/
 
-// Default label background color
+// 默认 label 背景颜色
 @label-default-bg:            @gray-light;
-// Primary label background color
+// 主要 label 背景
 @label-primary-bg:            @brand-primary;
-// Success label background color
+// 成功 label 背景颜色
 @label-success-bg:            @brand-success;
-// Info label background color
+// 信息 label 背景颜色
 @label-info-bg:               @brand-info;
-// Warning label background color
+// 警告 label 背景颜色
 @label-warning-bg:            @brand-warning;
-// Danger label background color
+// 危险 label 背景颜色
 @label-danger-bg:             @brand-danger;
 
-// Default label text color
+// 默认 label text 文字颜色
 @label-color:                 #fff;
-// Default text color of a linked label
+// 默认链接标签的文本颜色
 @label-link-hover-color:      #fff;
 
 
@@ -36,7 +37,7 @@
   vertical-align: baseline;
   border-radius: .25em;
 
-  // Add hover effects, but only for links
+  // 添加hover效果, 但只有链接才会有
   a& {
     &:hover,
     &:focus {
@@ -51,14 +52,14 @@
     display: none;
   }
 
-  // Quick fix for labels in buttons
+  // 快速修复按钮的标签
   .btn & {
     position: relative;
     top: -1px;
   }
 }
 
-// Colors
+// 颜色
 // Contextual variations (linked labels get darker on :hover)
 
 .label-default {

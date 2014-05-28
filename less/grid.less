@@ -1,45 +1,46 @@
-//
-// Grid system
-// --------------------------------------------------
-//== Media queries breakpoints
-//
-//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+/* =========================================
+* @name:        Grid
+* @description: 全局栅格
+* @author：		Vtoo Team
+* @Copy：		Vtoo design 2014
+* @git          https://github.com/VTOO/Smart-UI/
+*============================================*/
 
-// Extra small screen / phone
-// Note: Deprecated @screen-xs and @screen-phone as of v3.0.1
-// Note: Deprecated @screen-xs-min as of v3.2.0
+// 删格系统
+
+// 其他小屏幕/电话
+
 @screen-xs:                  480px;
 @screen-xs-min:              @screen-xs;
 @screen-phone:               @screen-xs-min;
 
-// Small screen / tablet
-// Note: Deprecated @screen-sm and @screen-tablet as of v3.0.1
+// 小屏幕/平板电脑
+
 @screen-sm:                  768px;
 @screen-sm-min:              @screen-sm;
 @screen-tablet:              @screen-sm-min;
 
-// Medium screen / desktop
-// Note: Deprecated @screen-md and @screen-desktop as of v3.0.1
+// 中等屏幕/桌面
+
 @screen-md:                  992px;
 @screen-md-min:              @screen-md;
 @screen-desktop:             @screen-md-min;
 
-// Large screen / wide desktop
-// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
+// 大屏幕宽/桌面
+
 @screen-lg:                  1200px;
 @screen-lg-min:              @screen-lg;
 @screen-lg-desktop:          @screen-lg-min;
 
-// So media queries don't overlap when required, provide a maximum
+// 所以媒体查询不重叠在需要时,提供一个最大值
 @screen-xs-max:              (@screen-sm-min - 1);
 @screen-sm-max:              (@screen-md-min - 1);
 @screen-md-max:              (@screen-lg-min - 1);
 
-//== Grid system
-//
-//## Define your custom responsive grid.
+// 删格系统
+// 义定制响应栅格
 
-// Number of columns in the grid.
+// 容器宽度
 @grid-columns:              12;
 // Padding between columns. Gets divided in half for the left and right.
 @grid-gutter-width:         30px;
@@ -50,30 +51,26 @@
 @grid-float-breakpoint-max: (@grid-float-breakpoint - 1);
 
 
-//== Container sizes
-//
-//## Define the maximum width of `.container` for different screen sizes.
+//== 容器大小
 
-// Small screen / tablet
+//Pagination小屏幕/平板电脑
 @container-tablet:             ((720px + @grid-gutter-width));
 // For `@screen-sm-min` and up.
 @container-sm:                 @container-tablet;
 
-// Medium screen / desktop
+//中等屏幕/桌面
 @container-desktop:            ((940px + @grid-gutter-width));
 // For `@screen-md-min` and up.
 @container-md:                 @container-desktop;
 
-// Large screen / wide desktop
+//大屏幕宽/桌面
 @container-large-desktop:      ((1140px + @grid-gutter-width));
 // For `@screen-lg-min` and up.
 @container-lg:                 @container-large-desktop;
 
 
 
-// Container widths
-//
-// Set the container width, and override it for fixed navbars in media queries.
+// 容器宽度
 
 .container {
   .container-fixed();
